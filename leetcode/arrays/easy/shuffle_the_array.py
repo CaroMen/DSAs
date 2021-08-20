@@ -7,6 +7,21 @@
 #   x = [2, 5, 1], y = [3, 4, 7]
 #   we want to place each of the y elements right after each of the x elements
 #   somewhat like a zip problem
+#   create an x_start that starts at the beginning
+#   create an x_end that ends at the half point of the list
 
 def shuffle(nums, n):
-    pass
+    res = []
+
+    pointer = n
+
+    for i in range(n):
+        res.append(nums[i])
+        res.append(nums[pointer])
+        pointer += 1
+
+    print(res)
+    return res
+
+
+shuffle([2, 5, 1, 3, 4, 7], 3)
