@@ -17,4 +17,11 @@ class ListNode:
 
 class Solution:
     def rotateRight(self, head, k):
-        pass
+        if not head:
+            return head
+
+        length, tail = 1, head
+
+        while trail.next:
+            tail = tail.next
+            length += 1
