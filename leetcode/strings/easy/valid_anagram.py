@@ -12,7 +12,8 @@ def isAnagram(s, t):
     for char in s:
         if char not in char_freq:
             char_freq[char] = 1
-        char_freq[char] += 1
+        else:
+            char_freq[char] += 1
 
     for char2 in t:
         if char2 not in char_freq:
