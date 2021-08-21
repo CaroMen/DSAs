@@ -9,6 +9,7 @@
     NOTES
         we could use the sliding window technique
         we need to return the sum
+        ! Used Kadane's algorithm
 """
 
 
