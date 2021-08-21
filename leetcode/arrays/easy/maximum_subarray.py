@@ -14,8 +14,8 @@
 
 
 def maxSubArray(nums):
-    max_sum = 0  # final return
-    current_max = 0  # used this to compare the current max and final max
+    max_sum = nums[0]  # final return
+    current_max = nums[0]  # used this to compare the current max and final max
 
     for idx in range(1, len(nums)):
         current_num = nums[idx]

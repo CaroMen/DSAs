@@ -13,6 +13,7 @@ def containsDuplicate(nums):
         return True
     return False
 
+# Time complexity is O(n)
 
 # def containsDuplicate(nums):
 #     freq = {}
