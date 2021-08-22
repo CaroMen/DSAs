@@ -25,20 +25,58 @@ class Graph:
 
         return self.adjList
 
+    def bfs(self, starting_vertex):
+        visited = set()
+        vertices = []
+        queue = [starting_vertex]
 
-edgesa = [['a', 'b'],
-          ['c']]
-#   ['a', 'd'],
-#   ['d', 'g'],
-#   ['b', 'c'],
-#   ['b', 'e'],
-#   ['c', 'f'],
-#   ['c', 'g'],
-#   ['f', 'g']]
+        while len(queue) > 0:
+            current_vertex = queue.pop(0)
+            if current_vertex in visited:
+                continue
+            visited.add(current_vertex)
+            vertices.append(current_vertex)
+
+            queue.extend(self.adjList[current_vertex])
+
+        return vertices
+
+    def dfs(self, starting_vertex, visited=set(), vertices=[]):
+        if starting_vertex in visited:
+            return
+        visited.add(starting_vertex)
+        vertices.append(starting_vertex)
+
+        for neighbor in self.adjList[starting_vertex]:
+            self.dfs(neighbor, visited, vertices)
+
+        return vertices
+
+
+di = {
+    'a': ['b', 'c', 'd'],
+    'b': ['a', 'c', 'e'],
+    'c': ['a', 'b', 'f', 'g'],
+    'd': ['a', 'g'],
+    'g': ['d', 'c', 'f'],
+    'e': ['b'],
+    'f': ['c', 'g']
+}
+
+
+edges = [['a', 'b'],
+         ['a', 'c'],
+         ['a', 'd'],
+         ['d', 'g'],
+         ['b', 'c'],
+         ['b', 'e'],
+         ['c', 'f'],
+         ['c', 'g'],
+         ['f', 'g']]
 
 graph = Graph()
 
-print(graph.build_graph(edgesa))
+print(graph.build_graph(edges))
 """
 {
     'a': ['b', 'c', 'd'],
@@ -50,3 +88,5 @@ print(graph.build_graph(edgesa))
     'f': ['c', 'g']}
 
 """
+print(graph.bfs('a'))
+print(graph.dfs('a'))
