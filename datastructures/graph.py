@@ -1,5 +1,17 @@
 # create a graph
 
+"""
+    DFS:
+        we go deep inside the nodes before we go to our neighbors
+        we can use a stack, but im going to use the stack via recursion
+
+    BFS:
+        we go broad before going deep
+        we use a queue
+        we pull out first element, check if it's final element, if not add all its children to queue
+"""
+
+
 class Graph:
     def __init__(self):
         self.adjList = {}
@@ -14,7 +26,6 @@ class Graph:
 
         self.adjList[source_value].append(dest_value)
         self.adjList[dest_value].append(source_value)
-        # print(self.adjList)
 
     def build_graph(self, edges):
         for edge in edges:
