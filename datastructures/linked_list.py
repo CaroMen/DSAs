@@ -72,3 +72,26 @@ class LinkedList:
 
         self.length -= 1
         return removed
+
+    def contains(target):
+        node = self.head
+
+        while node:
+            if node.value == target:
+                return True
+            node = node.next
+
+        return False
+
+    def get(index):
+        if index < 0 or index >= self.length:
+            return None
+
+        counter = 0
+        current = self.head
+
+        while counter != index:
+            current = current.next
+            counter += 1
+
+        return current
