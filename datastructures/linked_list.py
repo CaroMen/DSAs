@@ -36,14 +36,39 @@ class LinkedList:
             self.head = None
             self.tail = None
         else:
-            # 1 -> 2 -> 3 -> 4
-            # current = 3
-            # current.next = 4
-            # removed = 4
             while current.next != self.tail:
                 current = current.next
             current.next = None
             self.tail = current
+
+        self.length -= 1
+        return removed
+
+    def add_to_head(self, val):
+        node = Node(val)
+
+        if self.head == None:
+            self.head = node
+            self.tail = node
+        else:
+            node.next = self.head
+            self.head = node
+
+        self.length += 1
+        return self
+
+    def remove_head():
+        if self.head == None:
+            return undefined
+
+        removed = self.head
+
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = removed.next
+            removed.next = None
 
         self.length -= 1
         return removed
