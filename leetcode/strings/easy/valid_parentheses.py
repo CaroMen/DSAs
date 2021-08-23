@@ -22,18 +22,33 @@
 
 
 def isValid(s):
-    front = "("
-    back = ")"
+    stack = []
+    close_to_open = {")": "(", "}": "{", "]": "["}
 
-    for idx in range(1, len(s)):
-        if s[idx - 1] == front and s[idx] == back:
-            print(True)
-            return True
-    print(False)
-    return False
+    for char in s:
+        # this by default loops through the keys, so
+        # we're looking at the closing parenthesis
+        if char in close_to_open:
+            # make sure stack is not empty and that
+            # top value is matching opening parenthesis
+            if stack and stack[-1] == close_to_open[char]:
+                stack.pop()
+            else:
+                # dont match or stack is empty
+                # parenthesis don't match
+                print(False)
+                return False
+        # if we don't get a closing parenthesis
+        else:
+            # just add open parenthesis to stack
+            stack.append(c)
+
+    # return true only if stack is empty
+    return True if not stack else False
+    # print(stack)
 
 
-isValid("()[]{}")
-isValid("(]")
-isValid("([)]")
+# isValid("()[]{}")
+# isValid("(]")
+# isValid("([)]")
 isValid("{[]}")
