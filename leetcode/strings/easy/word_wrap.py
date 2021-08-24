@@ -26,9 +26,18 @@
 def word_wrap(string, max_width):
     res = []
 
-    for i in range(len(string)):
+    for i in range(len(string) - 1):
+        # if len(string[i]) <= max_width:
         new_line = string[:max_width]
-        res.append(new_line)
+
+        if new_line[-1] == ' ':
+            res.append(new_line)
+            # print(new_line)
+        else:
+            max_width -= 1
+
+        # print(new_line)
+        res.append(new_line.find)
         string = string[max_width:]
 
         if len(new_line) < max_width:
