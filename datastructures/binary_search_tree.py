@@ -47,6 +47,21 @@ class BST:
         else:
             return True
 
+    def bfs(root):
+        if not root:
+            return []
+        lst = []
+        queue = [root]
+
+        while queue.length:
+            current = queue.pop(0)
+            lst.append(current.val)
+
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
+
     def dfs(root):
         if not root:
             return []
@@ -62,18 +77,3 @@ class BST:
             lst.append(current.val)
             if current.left:
                 stack.append(current.left)
-
-    def bfs(root):
-        if not root:
-            return []
-        lst = []
-        queue = [root]
-
-        while queue.length:
-            current = queue.pop(0)
-            lst.append(current.val)
-
-            if current.left:
-                queue.append(current.left)
-            if current.right:
-                queue.append(current.right)
