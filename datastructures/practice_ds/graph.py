@@ -41,6 +41,7 @@ class Graph:
     def dfs(self, vertex, visited=set(), vertices=[]):
         if vertex in visited:
             return
+
         visited.add(vertex)
         vertices.append(vertex)
 
