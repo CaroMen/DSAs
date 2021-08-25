@@ -30,7 +30,6 @@ class Stack:
         if not self.length:
             self.top = node
         else:
-            # we have a top
             node.next = self.top
             self.top = node
 
@@ -44,5 +43,27 @@ class Stack:
             removed = self.top
             self.top = removed.next
             self.length -= 1
-
             return removed.val
+
+    # def add(self, val):
+    #     node = Node(val)
+
+    #     if not self.length:
+    #         self.top = node
+    #     else:
+    #         # we have a top
+    #         node.next = self.top
+    #         self.top = node
+
+    #     self.length += 1
+    #     return self.length
+
+    # def pop(self):
+    #     if not self.top:
+    #         return None
+    #     else:
+    #         removed = self.top
+    #         self.top = removed.next
+    #         self.length -= 1
+
+    #         return removed.val

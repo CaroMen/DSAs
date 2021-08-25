@@ -5,11 +5,6 @@
     adding is called pushing
     deleting is called pooping
 
-    works very similar to stacking plates
-    note:
-        when we add, the new node will point to the top and the top points to the new node
-
-        when we remove, we need to get the back. the back will now point to the top will now point to None and the new top will be the removed top's .next
 """
 
 
