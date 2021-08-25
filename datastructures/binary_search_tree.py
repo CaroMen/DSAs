@@ -18,22 +18,23 @@ class BST:
 
     def insert(self, val):
         node = Node(val)
+
         if not self.root:
             self.root = node
-            return
 
-        this_value = self.root
-        while this_value:
-            if this_value > val:  # 5 > 2
-                if not this_value.left:
-                    this_value.left = node
+        current_node = self.root
+
+        while current_node:
+            if current_node.val > val:
+                if not current_node.left:
+                    current_node.left = node
                     return
-                this_value = this_value.left
+                current_node = current_node.left
             else:
-                if not this_value.right:
-                    this_value.right = node
+                if not current_node.right:
+                    current_node.right = node
                     return
-                this_value = this_value.right
+                current_node = current_node.right
 
     def search(self, val, current_node=self.root):
         if not current_node:
@@ -45,3 +46,34 @@ class BST:
             return self.search(val, current_node.right)
         else:
             return True
+
+    def dfs(root):
+        if not root:
+            return []
+
+        stack = [root]
+        lst = []
+
+        while len(stack):
+            current = stack.pop()
+
+            if current.right:
+                stack.append(current.right)
+            lst.append(current.val)
+            if current.left:
+                stack.append(current.left)
+
+    def bfs(root):
+        if not root:
+            return []
+        lst = []
+        queue = [root]
+
+        while queue.length:
+            current = queue.pop(0)
+            lst.append(current.val)
+
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
