@@ -37,3 +37,14 @@ class Graph:
             queue.append(self.adjList[current])
 
         return vertices
+
+    def dfs(self, vertex, visited=set(), vertices=[]):
+        if vertex in visited:
+            return
+        visited.add(vertex)
+        vertices.append(vertex)
+
+        for neighbor in self.adjList[vertex]:
+            self.dfs(neighbor, visited, vertices)
+
+        return vertices
