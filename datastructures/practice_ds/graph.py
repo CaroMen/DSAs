@@ -23,18 +23,18 @@ class Graph:
         return self.adjList
 
     def bfs(self, vertex):
+        queue = [vertex]
         visited = set()
         vertices = []
-        queue = [vertex]
 
-        while len(queue) > 0:
-            current = queue.pop(0)
-            if current in visited:
+        while len(queue):
+            current_vertex = queue.pop(0)
+            if current_vertex not in visited:
                 continue
-            visited.add(current)
-            vertices.append(current)
+            visited.add(current_vertex)
+            vertices.append(current_vertex)
 
-            queue.append(self.adjList[current])
+            queue.extend(self.adjList[current_vertex])
 
         return vertices
 
