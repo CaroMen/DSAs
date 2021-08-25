@@ -29,6 +29,24 @@ class Tree:
                     return
                 current_node = current_node.right
 
+    def dfs(self, root):
+        if not root:
+            return []
+
+        stack = [root]
+        lst = []
+
+        while len(stack):
+            current = stack.pop()
+
+            if current.right:
+                stack.append(current.right)
+            lst.append(current)
+            if current.left:
+                stack.append(current.left)
+
+        return lst
+
     def bfs(self, root):
         if not root:
             return []
@@ -45,23 +63,5 @@ class Tree:
 
             if current_node.right:
                 queue.append(current_node.right)
-
-        return lst
-
-    def dfs(self, root):
-        if not root:
-            return []
-
-        stack = [root]
-        lst = []
-
-        while len(stack):
-            current = stack.pop()
-
-            if current.right:
-                stack.append(current.right)
-            lst.append(current)
-            if current.left:
-                stack.append(current.left)
 
         return lst

@@ -73,6 +73,21 @@ class LinkedList:
         self.length -= 1
         return removed
 
+    def max_node(self):
+        current = self.head
+        max_val = self.head.value
+
+        if not self.head:
+            return None
+        else:
+            while current != None:
+                if (max_val < current.value):
+                    max_val = current.value
+                current = current.next
+
+                if current == self.tail:
+                    break
+
     def contains(target):
         node = self.head
 
