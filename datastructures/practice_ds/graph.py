@@ -3,7 +3,7 @@ class Graph:
         self.adjList = {}
 
     def add_vertex(self, vertex):
-        if not self.adjList[vertex]:
+        if vertex not in self.adjList:
             self.adjList[vertex] = []
 
     def add_edges(self, src_dest, end_dest):
@@ -16,9 +16,9 @@ class Graph:
     def build_graph(self, edges):
         for edge in edges:
             if len(edge) == 1:
-                self.add_edges(edge[0])
+                self.add_vertex(edge[0])
             else:
-                self.add_edges(edge[0], edge[1])
+                self.add_vertex(edge[0], edge[1])
 
         return self.adjList
 
