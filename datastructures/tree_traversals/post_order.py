@@ -21,3 +21,24 @@ def recursive_postorder(root):
 
     recursive(root)
     return result
+
+
+""" Iterative Implementation """
+
+
+def iterative_postorder(root):
+    if not root:
+        return []
+
+    result = []
+    stack = [root]
+
+    while stack:
+        current = stack.pop()
+        if current.left:
+            stack.append(current.left)
+        if current.right:
+            stack.append(current.right)
+        result.append(current.val)
+
+    return result[::-1]
