@@ -21,3 +21,25 @@ def recursive_inorder(root):
 
     recursive(root)
     return result
+
+
+""" Iterative Implementation """
+
+
+def iterative_inorder(root):
+    result = []
+    stack = []
+
+    current = root
+
+    while stack or current:
+        if current:
+            stack.append(current)
+            current = current.left
+            continue
+
+        current = stack.pop()
+        result.append(current.val)
+        current = current.right
+
+    return result
