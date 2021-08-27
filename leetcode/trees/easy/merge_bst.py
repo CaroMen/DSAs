@@ -20,6 +20,8 @@
             [3, 4, 5, 5]
 
 
+    NOTES
+        order we need to iterate through is breadth first or level order
 """
 
 
