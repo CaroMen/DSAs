@@ -22,6 +22,12 @@
 
     NOTES
         order we need to iterate through is breadth first or level order
+        since it's bfs, we need a queue and then a lst variable to store the new merged bst
+
+        we might need two queues for each of the trees to then do the two loops, but this might not be the most optimal solution
+
+        if tree1 and tree2 are null, then we just return null
+            this can be our base case if we solve it recursively
 """
 
 
@@ -34,4 +40,18 @@ class TreeNode:
 
 class Solution:
     def mergeTrees(root1, root2):
-        pass
+        if not root1 and not root2:
+            return None
+
+        value_1 = root1.val if root1 else 0
+        value_2 = root2.val if root2 else 0
+
+        new_root = TreeNode(value_1, value_2)
+
+        new_root.left = self.mergeTrees(
+            root1.left if root1 else None, root2.left if root2 else None)
+
+        new_root.right = self.mergeTrees(
+            root1.right if root1 else None, root2.right if root1 else None)
+
+        return new_root
