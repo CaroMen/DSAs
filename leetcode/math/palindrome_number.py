@@ -14,8 +14,11 @@
     NOTES
         - ask if we can store the numbers in a list
         - if we can, then we can use pointers and check that the start and end match
+        - we need to convert it to string before doing any pointers
 
 """
+
+# CONVERT TO STRING
 
 
 def isPalindrome(x):
