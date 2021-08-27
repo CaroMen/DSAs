@@ -8,7 +8,7 @@ class TreeNode:
 """ Recursive Implementation """
 
 
-def preorder_traversal(root):
+def recurisve_preorder(root):
     result = []
 
     def recursive(node):
@@ -20,4 +20,27 @@ def preorder_traversal(root):
         recursive(node.right)
 
     recursive(root)
+    return result
+
+
+""" Iterative Implementation """
+
+
+def iterative_preorder(root):
+    if not root:
+        return []
+
+    result = []
+    stack = [root]
+
+    while stack:
+        current = stack.pop()
+
+        result.append(current.val)
+
+        if current.right:
+            stack.append(current.right)
+        if current.left:
+            stack.append(current.left)
+
     return result
