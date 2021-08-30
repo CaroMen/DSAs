@@ -28,4 +28,15 @@
 
 
 def twoSum(numbers, target):
-    pass
+    start_pointer = 0
+    end_poiner = len(numbers) - 1
+
+    while start_pointer < end_poiner:
+        current_sum = numbers[start_pointer] + numbers[end_poiner]
+
+        if current_sum == target:
+            return [start + 1, end + 1]
+        elif current_sum < target:
+            start_pointer += 1
+        elif current_sum > target:
+            end_poiner -= 1
