@@ -11,6 +11,7 @@
         - also keep count of the length and update it by doing right - left + 1 (plus 1 to balance out index starting at 0 )
         - there's also the case where the string is even, which means we won't have an actual middle point
         - in this scenario we do the same thing as before, but we need to start our right pointer at i + 1
+            - we do i + 1 because we're working with indices
 """
 
 
@@ -21,6 +22,7 @@ def longestPalindrome(s):
     for idx in range(len(s)):
         left, right = idx, idx
 
+        # if string length is odd
         while left >= 0 and right < len(s) and s[left] == s[right]:
             if (right - left + 1) > res_length:
                 res = s[left:right+1]
@@ -30,6 +32,7 @@ def longestPalindrome(s):
 
         left, right = idx, idx + 1
 
+        # if string length is even
         while left >= 0 and right < len(s) and s[left] == s[right]:
             if (right - left + 1) > res_length:
                 res = s[left: right+1]
