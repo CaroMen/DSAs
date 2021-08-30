@@ -6,6 +6,13 @@
     INPUTS/OUPUTS
         strs = ["eat","tea","tan","ate","nat","bat"]
         => [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+    NOTES
+        BRUTE FORCE
+        - we can loop through list and sort each word in the list
+        - store each newly sorted word in a new list
+        - loop through that list
+
 """
 
 
