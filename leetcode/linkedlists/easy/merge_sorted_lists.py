@@ -38,3 +38,5 @@ class Solution:
             tail.next = l2
 
         return dummy.next
+
+# Time Complexity: O(n)
