@@ -13,6 +13,14 @@
             from there we do essentially the same as the Merge Sorted Lists
             - each list inside of lists is a linked list, so we have to compare each of those to each other
 
+        FINAL SOLUTION
+            - we use a helper function that will handle the actual sorting
+            - we need to check if our list is empty and if it is, just return None
+            - while the length of lists is greater than 1, we can loop through the lists variable
+            - we want to grab the current list and the adjancent one
+                - with the adjacent one, we have to check that the idx + 1 is less than the length of our lists and if it's not just return None
+                - the reason we can return None is because we'll be modifying our lists to include the mergedLists variable
+            - at the end we can just return lists[0]
 
 """
 
