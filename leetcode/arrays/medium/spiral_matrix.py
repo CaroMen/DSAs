@@ -71,9 +71,13 @@ def spiralOrder(matrix):
             result.append(matrix[row][col_end])
 
         for col in reversed(range(col_start, col_end)):
+            if row_start == row_end:
+                break
             result.append(matrix[row_end][col])
 
         for row in reversed(range(row_start + 1, row_end)):
+            if col_start == col_end:
+                break
             result.append(matrix[row][col_start])
 
         row_start += 1
