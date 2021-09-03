@@ -38,7 +38,16 @@
             we need the first numbers on row one -> kinda tricky, but we need to loop through the columns to get each number
                 for col in range(len(col_start, col_end + 1)):
                     result.append(matrix[row_start][col])
-                    col_start += 1
+
+            we need to now get the numbers on the right most column.
+                - we need to make sure we dont check the "row" we just went through
+                for row in range(len(row_start + 1, row_end + 1)):
+                    result.append(matrix[row][col_end])
+
+            we need to now go to the last row and grab each number at the columns
+                - again, we need to make sure we don't check numbers we already have
+                for col in range(len(col_start, col_end)):
+                    result.append(matrix[row_end][col])
 
 
 """
