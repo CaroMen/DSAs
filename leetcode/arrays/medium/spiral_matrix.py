@@ -40,6 +40,16 @@
                     result.append(matrix[row_start][col])
 
             we need to now get the numbers on the right most column.
+                - we need to make sure we dont check the "row" we just went through
+                for row in range(len(row_start + 1, row_end + 1)):
+                    result.append(matrix[row][col_end])
+
+            we need to now go to the last row and grab each number at the columns
+                - again, we need to make sure we don't check numbers we already have
+                for col in range(len(col_start, col_end)):
+                    result.append(matrix[row_end][col])
+
+            we need to now get the numbers on the right most column.
                 - we need to make sure we dont check the "row" we just went through, so do row_start + 1
                 for row in range(len(row_start + 1, row_end + 1)):
                     result.append(matrix[row][col_end])
