@@ -58,4 +58,27 @@
 
 
 def spiralOrder(matrix):
-    passspir
+    result = []
+
+    row_start, row_end = 0, len(matrix) - 1
+    col_start, col_end = 0, len(matrix[0]) - 1
+
+    while row_start <= row_end and col_start <= col_end:
+        for col in range(col_start, col_end + 1):
+            result.append(matrix[row_start][col])
+
+        for row in range(row_start + 1, row_end + 1):
+            result.append(matrix[row][col_end])
+
+        for col in reversed(range(col_start, col_end)):
+            result.append(matrix[row_end][col])
+
+        for row in reversed(range(row_start + 1, row_end)):
+            result.append(matrix[row][col_start])
+
+        row_start += 1
+        row_end -= 1
+        col_start += 1
+        col_end -= 1
+
+    return result
