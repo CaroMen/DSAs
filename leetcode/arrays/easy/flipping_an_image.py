@@ -44,4 +44,23 @@
 
 
 def flipAndInvert(image):
-    pass
+    result = []
+
+    for idx in range(len(image)):
+        current_row = image[idx]
+        reversed_list = list(reversed(current_row))
+
+        for idx in range(len(reversed_list)):
+
+            if reversed_list[idx] == 1:
+                reversed_list[idx] = 0
+            elif reversed_list[idx] == 0:
+                reversed_list[idx] = 1
+
+        result.append(reversed_list)
+
+    print(result)
+    return result
+
+
+flipAndInvert([[1, 1, 0], [1, 0, 1], [0, 0, 0]])
