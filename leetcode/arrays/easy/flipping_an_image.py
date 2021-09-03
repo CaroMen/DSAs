@@ -27,6 +27,19 @@
         each 0 needs to be turned into a 1
         the values inside the inner lists have to be reversed
 
+        we might not be able to use just one for loop
+        so, I'd loop through the outer list and use a variable to store the inner lists
+            for idx in range(len(image)):
+                current_row = image[idx]
+
+        each row has to be reversed, so I might use the reversed() method. we can also store this in a variable
+            - no clue what the reversed method returns so review that
+
+        using that variable, I'd loop through the inner lists, which should now be reversed
+
+        check each value to see if it's 0 or 1 and then flip those around
+            - so 1 turns to 0, 0 turns to 1
+
 """
 
 
