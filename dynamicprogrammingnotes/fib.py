@@ -10,18 +10,37 @@
 """
 
 
-def fib(n):
+# def fib(n):
+#     if n <= 2:
+#         return 1
+
+#     return fib(n - 1) + fib(n - 2)
+
+# print(fib(6))
+# print(fib(7))
+# print(fib(8))
+# print(fib(50))
+
+# memoization
+#   python dict, keys will be arg to func, value will be the return value
+
+
+def fib_better(n, memo={}):
+    if n in memo:
+        return memo[n]
+
     if n <= 2:
         return 1
 
-    return fib(n - 1) + fib(n - 2)
+    memo[n] = fib_better(n - 1, memo) + fib_better(n - 2, memo)
+
+    return memo[n]
 
 
-print(fib(6))
-print(fib(7))
-print(fib(8))
-print(fib(50))
-
+print(fib_better(6))
+print(fib_better(7))
+print(fib_better(8))
+print(fib_better(50))
 
 """
     DRAWINGS
