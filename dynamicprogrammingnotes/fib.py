@@ -21,3 +21,16 @@ print(fib(6))
 print(fib(7))
 print(fib(8))
 print(fib(50))
+
+
+"""
+    DRAWINGS
+                            7
+                    6                5
+                 5      4        4      3
+              4    3  3   2    3   2  3   2
+
+
+        notice the 3 and 2 being repeated. the 2 is our base case so we don't branch out there
+
+"""
