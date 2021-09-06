@@ -29,4 +29,17 @@ def numIslands(grid):
     for row in range(len(grid)):
         for col in range(len(grid[0])):
             if grid[row][col] == "1":
+                checkIslands(row, col, grid)
                 count += 1
+
+
+def checkIslands(row, col, grid):
+    if row < 0 or row >= len(grid) or col < 0 and col >= len(grid[0]):
+        return
+
+    if grid[row][col] == "1":
+        grid[row][col] = "0"
+        checkIslands(row - 1, col, grid)
+        checkIslands(row + 1, col, grid)
+        checkIslands(row,  col - 1, grid)
+        checkIslands(row, col + 1, grid)
