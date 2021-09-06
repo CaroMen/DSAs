@@ -13,5 +13,14 @@
 
     NOTES
         - a single "1" surrounded by "0"s will be an island
-        -
+        - we have to check all the way around our current location
+            - so if we have a one at grid[1][1]
+            - we need to check grid[0][1], so row - 1
+            - also need to check grid[1][0], so col - 1
+            - also need to check grid[1][2], so col + 1
+            - and also check grid[2][1], so row + 1
 """
+
+
+def numIslands(grid):
+    pass
