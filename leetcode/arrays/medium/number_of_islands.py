@@ -19,8 +19,14 @@
             - also need to check grid[1][0], so col - 1
             - also need to check grid[1][2], so col + 1
             - and also check grid[2][1], so row + 1
+        - return how many islands there are
 """
 
 
 def numIslands(grid):
-    pass
+    count = 0
+
+    for row in range(len(grid)):
+        for col in range(len(grid[0])):
+            if grid[row][col] == "1":
+                count += 1
