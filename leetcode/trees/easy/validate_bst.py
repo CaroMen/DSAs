@@ -19,3 +19,17 @@
             - if the left node of the right subtree is less than our initial parent node, then it's not valid
         - since we need to make sure that each subtree is valid as well we might be able to use a helper function that will check if the tree is valid
 """
+
+
+def isValidBST(root):
+    pass
+
+
+def valid(node, left, right):
+    if not node:
+        return True
+
+    if not (node.val < right and node.val > left):
+        return False
+
+    return (valid(node.left, left, node.val) and valid(node.right, node.val, right))
