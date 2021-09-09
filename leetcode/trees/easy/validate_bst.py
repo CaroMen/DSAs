@@ -22,7 +22,7 @@
 
 
 def isValidBST(root):
-    pass
+    return valid(root, float("-inf"), float("inf"))
 
 
 def valid(node, left, right):
