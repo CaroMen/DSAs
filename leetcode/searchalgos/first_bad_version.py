@@ -21,5 +21,20 @@
     QUESTIONS
         - we don't receive a bad version parameter, so how do we determine which is bad or not
             - im assuming, because it returns a boolean, that we need to do something with that to figure out the solution
+            - A: we use the isBadVersion() to get the boolean that would tell us where we need to move to
 
 """
+
+def firstBadVersion(n):
+    left = 1
+    right = n + 1
+
+    while left < right:
+        middle = (left + right) // 2
+
+        if isBadVersion(middle):
+            right = middle
+        else:
+            left = middle + 1
+
+    return left
