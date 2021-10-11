@@ -15,3 +15,20 @@
         - repeat this process until the middle number is equal to the target number or until the list is empty
 
 """
+
+def search(nums, target):
+    left = 0
+    right = len(nums) - 1
+
+    while left <= right:
+        middle = (left + right) // 2
+        current_num = nums[middle]
+
+        if current_num == target:
+            return middle
+        elif current_num > target: # we are dealing with the right side now
+            right = middle - 1
+        elif current_num < target: # we are dealing with the left side now
+            left = middle + 1
+
+    return -1
