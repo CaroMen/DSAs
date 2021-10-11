@@ -12,6 +12,14 @@
             call isBadVersion(4) => true
             call isBadVersion(5) => true
 
+    TECHNIQUE
+        - n is the length of our array. it's the number of versions we have
+            - n = 3 => [1, 2, 3]
+        - we could split the list in half and check each side
+            - we can check each value and see if the bad version is in that side we're on
 
+    QUESTIONS
+        - we don't receive a bad version parameter, so how do we determine which is bad or not
+            - im assuming, because it returns a boolean, that we need to do something with that to figure out the solution
 
 """
