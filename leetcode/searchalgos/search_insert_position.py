@@ -23,3 +23,21 @@
             -
 
 """
+
+def searchInsert(nums, target):
+    left = 0
+    right = len(nums) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        current_num = nums[mid]
+
+        # [1, 3, 5, 7, 9] target = 1, current num = 5
+        if current_num < target:
+            left = mid + 1
+        elif current_num > target:
+            right = mid - 1
+        elif target == current_num:
+            return mid
+
+    return left
