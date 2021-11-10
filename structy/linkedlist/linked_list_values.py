@@ -7,3 +7,12 @@
     the way we can do this is to store head in a variable and we can loop while that variable is not None
     then we can move to the next node by setting the variable to head.next
 """
+def linked_list(head):
+  list_to_return = []
+  current = head
+
+  while current is not None:
+    list_to_return.append(current.val)
+    current = current.next
+
+  return list_to_return
